@@ -37,6 +37,9 @@ public class AppliDomotique {
             case "Radiateur":
                 f = new FabriqueRadiateur();
                 break;
+            case "Imprimante":
+                f = new FabriqueImprimante();
+                break;
             default:
                 throw new ClassNotFoundException("pas de dispositif connectable de ce type");
         }
