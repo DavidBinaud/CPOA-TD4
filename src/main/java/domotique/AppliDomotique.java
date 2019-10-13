@@ -28,10 +28,16 @@ public class AppliDomotique {
     private static void connecter(String type) throws ClassNotFoundException {
         switch (type) {
             case "Radio":
-                /* A completer */
+                Radio radio = new Radio();
+                System.out.println("Entrer la configuration de la nouvelle Radio");
+                radio.configurer("FM");
+                objets.add(radio);
                 break;
             case "Cafetiere":
-                /* A completer */
+                Cafetiere cafetiere = new Cafetiere();
+                System.out.println("Entrer la configuration de la nouvelle Cafetiere");
+                cafetiere.configurer("35°C");
+                objets.add(cafetiere);
                 break;
             default:
                 throw new ClassNotFoundException("pas de dispositif connectable de ce type");
