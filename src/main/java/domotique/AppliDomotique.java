@@ -40,6 +40,12 @@ public class AppliDomotique {
             case "Imprimante":
                 f = new FabriqueImprimante();
                 break;
+            case "ImprimanteLocale":
+                f = new FabriqueImprimanteLocale();
+                break;
+            case "ImprimanteReseau":
+                f = new FabriqueImprimanteReseau();
+                break;
             default:
                 throw new ClassNotFoundException("pas de dispositif connectable de ce type");
         }
@@ -58,6 +64,13 @@ public class AppliDomotique {
             }
         }
         System.out.println("Les objets connectés : " + objets);
+
+        Imprimante i1 = new Scanner(new Fax(new Imprimante()));
+        AdaptateurImprimante a1 = new AdaptateurImprimante(i1);
+        a1.demarrer();
+
+        Imprimante i2 = new Scanner(new Fax(new ImprimanteLocale()));
+        i2.imprimer();
 
 
         demarrerLesObjets();
